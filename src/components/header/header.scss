@@ -1,0 +1,55 @@
+.header {
+  width: 100vw;
+  min-width: 320px;
+  height: 90px;
+
+  .header__inner {
+    min-width: 300px;
+    width: 64.1%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header__nav {
+  width: 30%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .nav__link {
+    color: #58595b;
+  }
+}
+
+.header__user-interactions {
+  width: 30.2%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .user-interactions__btn {
+    height: 50px;
+
+    border-radius: 5px;
+
+    &.user-interactions__useful {
+      width: 178px;
+      background: #e04e39;
+      color: #fff;
+    }
+    &.user-interactions__personal-account {
+      width: 174px;
+      border: 1px solid #58595b;
+      background: none;
+      color: #58595b;
+    }
+  }
+}
