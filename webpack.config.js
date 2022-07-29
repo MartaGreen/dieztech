@@ -1,9 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 const path = require("path");
 
-const generatePath = (filename, ext) => {
-  return path.resolve(__dirname, "src/pages", filename, `${filename}.${ext}`);
-};
+const generatePath = (filename, ext) =>
+  path.resolve(__dirname, "src/pages", filename, `${filename}.${ext}`);
 const HtmlWebpackPluginExt = "pug";
 const entryExt = "js";
 
@@ -14,6 +14,8 @@ const plugins = [
     filename: "index.html",
     chunks: ["shared", "index"],
   }),
+
+  new SpriteLoaderPlugin(),
 ];
 
 module.exports = {
@@ -41,6 +43,19 @@ module.exports = {
           {
             loader: "file-loader",
             options: { name: "[name].[ext]", clean: true },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-sprite-loader",
+            options: {
+              extract: true,
+              publicPath: "/icons/",
+              spriteFilename: "sprites.svg",
+            },
           },
         ],
       },
