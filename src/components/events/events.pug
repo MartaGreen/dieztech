@@ -1,4 +1,39 @@
+-
+  var events = [
+    {
+      name: 'Вебинар "Построение бизнес-модели стартапа"',
+      date: "2 и 4 сентября, 17:30-19:45",
+      type: 'Вебинар',
+      image: '/images/event.png'
+    },
+    {
+      name: "Необходимые меры за 4 месяца до обязательной маркировки товаров легкой промышленности",
+      date: "10 сентября, 11:00",
+      type: 'Лекция',
+      image: '/images/event.png'
+    },
+    {
+      name: 'Вебинар "Customer Development. Инструмент по проверке гипотез о своем клиенте"',
+      date: "11 сентября, 17:30-19:45",
+      type: 'Вебинар',
+      image: '/images/event.png'
+    },
+    {
+      name: 'Выставка «Новые меры финансовой поддержки экспорта»',
+      date: "10 сентября, 11:00",
+      type: 'Выставка',
+      image: '/images/event.png'
+    },
+  ];
+
 section.events
   .events__inner(class="page-inner")
-    h2.events__title Заголовок
+    .events__header
+      h2.events__title Заголовок
+      span.events__btn Смотреть все мероприятия
     hr.events__hr
+
+    include ../event/event.pug
+    .events__container
+      each event in events
+        +Event(event)

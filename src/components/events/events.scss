@@ -1,25 +1,58 @@
 @import "../../shared/styles/variables.scss";
 
 .events {
+  position: relative;
   background: #f2f2f2;
 
   .events__inner {
-    width: 64.06%;
+    // width: 64.1%;
     padding: 60px 0 90px 0;
   }
 }
 
-.events__title {
-  position: relative;
+.events__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 56px;
-  color: $textColorDark;
+  .events__title {
+    position: relative;
+    flex: 0 1 238px;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: $textColorDark;
+    display: inline-block;
+  }
+
+  .events__btn {
+    flex: 0 1 258px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $eyeCatchingColor;
+    color: $textColorLight;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 5px;
+    letter-spacing: 0.03px;
+  }
 }
 
 .events__hr {
   width: 126px;
   border: 2px solid $eyeCatchingColor;
-  margin: 16px 0 50px 3px;
+  margin: 12px 0 50px 3px;
+}
+
+.events__container {
+  width: 100%;
+
+  display: grid;
+  grid-gap: 29.97px;
+  grid-template-columns: repeat(auto-fill, 285px);
 }

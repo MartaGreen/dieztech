@@ -42,16 +42,24 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            options: { name: "[name].[ext]", clean: true },
+            options: {
+              name: "[name].[ext]",
+              clean: true,
+              outputPath: "/images",
+            },
           },
         ],
       },
       {
-        test: /\.ttf$/,
+        test: /\.(eot|woff2?|ttf)$/,
         use: [
           {
             loader: "file-loader",
-            options: { name: "[name].[ext]", outputPath: "/fonts" },
+            options: {
+              name: "[name].[ext]",
+              outputPath: "/fonts",
+              clean: true,
+            },
           },
         ],
       },
