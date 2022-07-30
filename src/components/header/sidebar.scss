@@ -77,9 +77,10 @@ $burgerAnimDelay: 0s;
   right: 0;
 
   width: 320px;
-  height: calc(100vh - (90px + 5px));
+  // height: calc(100vh - (90px + 5px));
+  min-height: 100%;
 
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -89,6 +90,8 @@ $burgerAnimDelay: 0s;
   box-shadow: -2px 3px 5px grey;
   transition: $burgerAnimDuration;
   border-radius: 10px 0 0 10px;
+  z-index: 1000;
+  background: #fff;
 
   .sidebar__nav {
     display: flex;
