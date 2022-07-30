@@ -75,17 +75,19 @@ $burgerAnimDelay: 0s;
   right: 0;
 
   width: 320px;
-  height: 100vh;
+  // height: 100vh;
+  height: calc(100vh - (90px + 5px));
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   list-style: none;
   padding: 60px 0;
   box-shadow: -2px 3px 5px grey;
   transition: $burgerAnimDuration;
-  border-radius: 10px 0 0 0;
+  border-radius: 10px 0 0 10px;
 
   .sidebar__nav {
     display: flex;
@@ -97,14 +99,12 @@ $burgerAnimDelay: 0s;
     }
   }
 
+  .sidebar__user-interactions {
+    display: none;
+  }
+
   &.sidebar__content_hidden {
     right: -320px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .header__sidebar {
-    display: block;
   }
 }
 
@@ -200,5 +200,21 @@ $burgerAnimDelay: 0s;
   }
   100% {
     bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header__sidebar {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar__content {
+    .sidebar__user-interactions {
+      display: flex;
+      // flex-direction: column;
+      align-items: flex-end;
+    }
   }
 }
