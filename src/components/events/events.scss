@@ -14,6 +14,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 30px;
 
   .events__title {
     position: relative;
@@ -40,6 +41,7 @@
     line-height: 16px;
     border-radius: 5px;
     letter-spacing: 0.03px;
+    text-align: center;
   }
 }
 
@@ -55,4 +57,18 @@
   display: grid;
   grid-gap: 29.97px;
   grid-template-columns: repeat(auto-fill, 285px);
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .events__header {
+    align-items: center;
+
+    .events__title {
+      font-size: 30px;
+    }
+    .events__btn {
+      height: 50px;
+    }
+  }
 }
