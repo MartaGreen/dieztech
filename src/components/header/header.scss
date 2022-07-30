@@ -13,27 +13,36 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
   }
 }
 
-.header__nav {
-  width: 30%;
+.header__logo {
+  flex: none;
+}
 
+.header__nav {
+  flex: 0 1 378px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  margin-left: 123px;
+  margin-left: 132px;
 
   .nav__link {
     color: #58595b;
     font-family: "Roboto";
     font-weight: 400;
+
+    &:last-child {
+      flex-basis: 72px;
+      text-align: center;
+    }
   }
 }
 
 .header__user-interactions {
-  width: 30.3%;
+  width: 30.4%;
 
   display: flex;
   align-items: center;
@@ -41,19 +50,26 @@
   gap: 15px;
 
   .user-interactions__btn {
+    min-width: 120px;
     height: 50px;
     border-radius: 5px;
+
+    font-family: "Roboto";
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
 
+    .user-interactions__mark {
+      font-size: 16px;
+    }
+
     &.user-interactions__useful {
-      width: 178px;
+      flex: 0 1 178px;
       background: #e04e39;
       color: #fff;
     }
     &.user-interactions__personal-account {
-      width: 174px;
+      flex: 0 1 175px;
       border: 1px solid #58595b;
       background: none;
       color: #58595b;

@@ -1,6 +1,6 @@
 header.header 
   .header__inner
-    svg.logo(width="55" height="64" viewBox="0 0 55 64")
+    svg.header__logo(width="55" height="64" viewBox="0 0 55 64")
       use(xlink:href="icons/sprites.svg#logo")
     
     .header__nav
@@ -10,5 +10,7 @@ header.header
       a.nav__link(href="#") Новости
 
     .header__user-interactions 
-      button.user-interactions__btn(class="user-interactions__useful") # Полезное
+      button.user-interactions__btn(class="user-interactions__useful") 
+        span(class='user-interactions__mark') # 
+        | Полезное
       button.user-interactions__btn(class="user-interactions__personal-account") Личный кабинет
