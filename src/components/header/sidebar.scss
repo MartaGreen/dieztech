@@ -1,3 +1,5 @@
+@import "../../shared/styles/variables.scss";
+
 $burgerHeight: 20px;
 $burgerItemHeight: 3px;
 $centerPosition: calc(($burgerHeight - $burgerItemHeight) / 2);
@@ -20,7 +22,7 @@ $burgerAnimDelay: 0s;
     position: absolute;
     width: 100%;
     height: $burgerItemHeight;
-    background: #000;
+    background: $textColorDark;
     transform-origin: center;
 
     &:first-child {
@@ -75,7 +77,6 @@ $burgerAnimDelay: 0s;
   right: 0;
 
   width: 320px;
-  // height: 100vh;
   height: calc(100vh - (90px + 5px));
 
   display: flex;
@@ -213,7 +214,6 @@ $burgerAnimDelay: 0s;
   .sidebar__content {
     .sidebar__user-interactions {
       display: flex;
-      // flex-direction: column;
       align-items: flex-end;
     }
   }

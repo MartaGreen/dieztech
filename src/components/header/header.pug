@@ -4,16 +4,18 @@ header.header
       use(xlink:href="icons/sprites.svg#logo")
     
     .header__nav
-      a.nav__link(href="#") Главная
+      a.nav__link(href="#" class="nav__link_active") Главная
       a.nav__link(href="#") О нас
       a.nav__link(href="#") Мероприятия
       a.nav__link(href="#") Новости
 
     .header__user-interactions 
       button.user-interactions__btn(class="user-interactions__useful") 
-        span(class='user-interactions__mark') # 
-        | Полезное
-      button.user-interactions__btn(class="user-interactions__personal-account") Личный кабинет
+        svg.user-interactions__btn-icon(width="17" height="18" viewBox="0 0 17 18")
+          use(xlink:href='icons/sprites.svg#btn-icon')
+        span.user-interactions__btn-text Полезное
+      button.user-interactions__btn(class="user-interactions__personal-account")
+        span.user-interactions__btn-text Личный кабинет
 
     aside.header__sidebar(id="sidebar")
       .sidebar__burger 
@@ -23,13 +25,15 @@ header.header
       
       .sidebar__content(class="sidebar__content_hidden")
         .sidebar__nav(class="header__nav")
-          a.nav__link(href="#") Главная
+          a.nav__link(href="#" class="nav__link_active") Главная
           a.nav__link(href="#") О нас
           a.nav__link(href="#") Мероприятия
           a.nav__link(href="#") Новости
         
         .sidebar__user-interactions(class="header__user-interactions") 
           button.user-interactions__btn(class="user-interactions__useful") 
-            span(class='user-interactions__mark') # 
-            | Полезное
-          button.user-interactions__btn(class="user-interactions__personal-account") Личный кабинет
+            svg.user-interactions__btn-icon(width="17" height="18" viewBox="0 0 17 18")
+              use(xlink:href='icons/sprites.svg#btn-icon')
+            span.user-interactions__btn-text Полезное
+          button.user-interactions__btn(class="user-interactions__personal-account")
+            span.user-interactions__btn-text Личный кабинет

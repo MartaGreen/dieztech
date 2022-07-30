@@ -1,3 +1,5 @@
+@import "../../shared/styles/variables.scss";
+
 .header {
   width: 100vw;
   min-width: 320px;
@@ -30,7 +32,7 @@
   margin-left: 132px;
 
   .nav__link {
-    color: #58595b;
+    color: $textColor;
     font-family: "Roboto";
     font-weight: 400;
     cursor: pointer;
@@ -41,8 +43,9 @@
     }
 
     &:hover,
-    &:active {
-      color: #e04e39;
+    &:active,
+    &.nav__link_active {
+      color: $eyeCatchingColor;
     }
   }
 }
@@ -59,25 +62,29 @@
     height: 50px;
     border-radius: 5px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-family: "Roboto";
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
 
-    .user-interactions__mark {
-      font-size: 16px;
+    .user-interactions__btn-icon {
+      margin-right: 9px;
     }
 
     &.user-interactions__useful {
-      flex: 0 1 178px;
-      background: #e04e39;
-      color: #fff;
+      flex: 0 1 177px;
+      background: $eyeCatchingColor;
+      color: $textColorLight;
     }
     &.user-interactions__personal-account {
       flex: 0 1 175px;
-      border: 1px solid #58595b;
+      border: 1px solid $textColor;
       background: none;
-      color: #58595b;
+      color: $textColor;
     }
   }
 }

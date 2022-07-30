@@ -2,6 +2,7 @@ import "./header.scss";
 import "./sidebar.scss";
 
 import "../../assets/images/logo.svg";
+import "../../assets/images/btn-icon.svg";
 
 window.onload = () => {
   const sidebar = document.getElementById("sidebar");
