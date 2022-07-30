@@ -33,17 +33,22 @@
     color: #58595b;
     font-family: "Roboto";
     font-weight: 400;
+    cursor: pointer;
 
     &:last-child {
       flex-basis: 72px;
       text-align: center;
     }
+
+    &:hover,
+    &:active {
+      color: #e04e39;
+    }
   }
 }
 
 .header__user-interactions {
-  width: 30.4%;
-
+  flex: 0 1 373px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,5 +79,20 @@
       background: none;
       color: #58595b;
     }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .header__nav {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header__logo {
+    margin-right: auto;
+  }
+  .header__nav {
+    display: none;
   }
 }
