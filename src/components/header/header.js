@@ -1,30 +1,38 @@
 import "./header.scss";
-import "./sidebar.scss";
+import "./burger.scss";
 
 import "../../assets/images/logo.svg";
 import "../../assets/images/btn-icon.svg";
 
 window.onload = () => {
-  const sidebar = document.getElementById("sidebar");
-  const sidebarBurger = sidebar.querySelector(".sidebar__burger");
-  const sidebarContent = sidebar.querySelector(".sidebar__content");
+  const burger = document.getElementById("burger-menu");
+  const bodyInner = document.querySelector(".body__inner");
   let isOpened = false;
 
   const openSidebar = () => {
-    sidebarBurger.classList.add("sidebar__burger_open");
-    sidebarBurger.classList.remove("sidebar__burger_close");
-    sidebarContent.classList.remove("sidebar__content_hidden");
+    burger.classList.add("burger_open");
+    burger.classList.remove("burger_close");
+    bodyInner.style.transform = "translateX(-280px)";
   };
   const closeSidebar = () => {
-    sidebarBurger.classList.remove("sidebar__burger_open");
-    sidebarBurger.classList.add("sidebar__burger_close");
-    sidebarContent.classList.add("sidebar__content_hidden");
+    burger.classList.remove("burger_open");
+    burger.classList.add("burger_close");
+    bodyInner.style.transform = "translateX(0)";
   };
 
-  sidebarBurger.onclick = () => {
+  burger.onclick = () => {
     if (isOpened) closeSidebar();
     if (!isOpened) openSidebar();
 
     isOpened = !isOpened;
+  };
+
+  const bodyContent = document.querySelector(".body__content");
+  bodyContent.onclick = (e) => {
+    const clickedElem = e.target;
+
+    if (burger.contains(clickedElem)) return;
+    closeSidebar();
+    isOpened = false;
   };
 };

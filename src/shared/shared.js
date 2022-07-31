@@ -1,3 +1,4 @@
+import "../components/sidebar/sidebar";
 import "../components/header/header";
 
 // styles

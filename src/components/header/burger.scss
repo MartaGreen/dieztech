@@ -7,18 +7,14 @@ $centerPosition: calc(($burgerHeight - $burgerItemHeight) / 2);
 $burgerAnimDuration: 0.8s;
 $burgerAnimDelay: 0s;
 
-.header__sidebar {
+.header__burger {
+  position: relative;
   display: none;
   flex: 0 0 30px;
-}
-
-.sidebar__burger {
-  position: relative;
-  width: 30px;
   height: $burgerHeight;
   cursor: pointer;
 
-  .sidebar__burger-item {
+  .burger__item {
     position: absolute;
     width: 100%;
     height: $burgerItemHeight;
@@ -36,8 +32,8 @@ $burgerAnimDelay: 0s;
     }
   }
 
-  &.sidebar__burger_open {
-    .sidebar__burger-item {
+  &.burger_open {
+    .burger__item {
       &:first-child {
         animation: burgerFirstItem_open $burgerAnimDuration linear
           $burgerAnimDelay 1 normal forwards;
@@ -53,8 +49,8 @@ $burgerAnimDelay: 0s;
     }
   }
 
-  &.sidebar__burger_close {
-    .sidebar__burger-item {
+  &.burger_close {
+    .burger__item {
       &:first-child {
         animation: burgerFirstItem_close $burgerAnimDuration linear
           $burgerAnimDelay 1 normal forwards;
@@ -68,47 +64,6 @@ $burgerAnimDelay: 0s;
           $burgerAnimDelay 1 normal forwards;
       }
     }
-  }
-}
-
-.sidebar__content {
-  position: absolute;
-  top: 90px;
-  right: 0;
-
-  width: 320px;
-  // height: calc(100vh - (90px + 5px));
-  min-height: 100%;
-
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  list-style: none;
-  padding: 60px 0;
-  box-shadow: -2px 3px 5px grey;
-  transition: $burgerAnimDuration;
-  border-radius: 10px 0 0 10px;
-  z-index: 1000;
-  background: #fff;
-
-  .sidebar__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    .nav__link {
-      margin-bottom: 20px;
-    }
-  }
-
-  .sidebar__user-interactions {
-    display: none;
-  }
-
-  &.sidebar__content_hidden {
-    right: -320px;
   }
 }
 
@@ -208,16 +163,7 @@ $burgerAnimDelay: 0s;
 }
 
 @media screen and (max-width: 1200px) {
-  .header__sidebar {
+  .header__burger {
     display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .sidebar__content {
-    .sidebar__user-interactions {
-      display: flex;
-      align-items: flex-end;
-    }
   }
 }

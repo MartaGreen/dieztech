@@ -5,7 +5,10 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Главная
-  body 
-    include ../../components/header/header.pug
-    include ../../components/events/events.pug
-    include ../../components/offers/offers.pug
+  body
+    .body__inner
+      include ../../components/sidebar/sidebar.pug
+      .body__content
+        include ../../components/header/header.pug
+        include ../../components/events/events.pug
+        include ../../components/offers/offers.pug
