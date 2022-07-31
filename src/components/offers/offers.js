@@ -15,13 +15,11 @@ import "../../assets/images/tutors.svg";
 window.addEventListener("load", () => {
   const offersSwiper = document.getElementById("offers-swiper");
 
-  new Swiper(offersSwiper, {
+  const swiper = new Swiper(offersSwiper, {
     modules: [Navigation, Pagination],
     spaceBetween: 30,
     loop: false,
     speed: 400,
-    slidesPerView: 4,
-    slidesPerGroup: 4,
 
     navigation: {
       nextEl: offersSwiper.querySelector(".swiper-button-next"),
@@ -44,4 +42,24 @@ window.addEventListener("load", () => {
       },
     },
   });
+
+  const visibleSlidesCount = () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth <= 700) return 1;
+    if (windowWidth <= 1200) return 2;
+    if (windowWidth > 1200) return 4;
+  };
+  const changeVisibleSlidesCount = (count) => {
+    swiper.params.slidesPerView = count;
+    swiper.params.slidesPerGroup = count;
+    swiper.update();
+  };
+  const setVisibleSlides = () => {
+    const slidesCount = visibleSlidesCount();
+    changeVisibleSlidesCount(slidesCount);
+  };
+
+  setVisibleSlides();
+  window.addEventListener("resize", setVisibleSlides);
 });

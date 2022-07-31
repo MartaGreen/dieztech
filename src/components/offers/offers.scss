@@ -15,10 +15,8 @@
 }
 
 .offers-slider__nav-panel {
-  width: 147px;
-
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 40px auto;
 }
@@ -45,13 +43,13 @@
 }
 
 .offers-slider__pagination {
-  width: 50px;
   position: relative;
   bottom: unset;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 20px;
 }
 
 .pagination__bullet {
@@ -61,9 +59,19 @@
   border-radius: 50%;
   background: none;
   cursor: pointer;
+  margin: 0 5px;
 
   &.pagination__bullet_active {
     border: none;
     background: $eyeCatchingColor;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .offers-slider__pagination {
+    display: none;
+  }
+  .offers-slider__nav-btn {
+    margin: 0 20px;
   }
 }
