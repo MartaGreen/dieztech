@@ -7,6 +7,11 @@ import "./offers.scss";
 import "../offer/offer";
 import "../../assets/images/arrow.svg";
 
+import "../../assets/images/accountants.svg";
+import "../../assets/images/babysitters.svg";
+import "../../assets/images/programmers.svg";
+import "../../assets/images/tutors.svg";
+
 window.addEventListener("load", () => {
   const offersSwiper = document.getElementById("offers-swiper");
 

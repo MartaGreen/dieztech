@@ -1,6 +1,6 @@
-mixin Offer({name, iconId})
-  .offers__offer(class="swiper-slide")
-    //- svg.offer__icon(viewBox="0 0 120 120")
-    //-   use(xlink:href=`icons/sprites.sv#${iconId}`)
+mixin Offer({name, iconId, width})
+  article.offers__offer(class="swiper-slide")
+    svg.offer__icon(width=width height='22' viewBox=`0 0 ${width} 22`)
+      use(xlink:href=`icons/sprites.svg#${iconId}`)
 
-    .offer__name= name
+    span.offer__name !{name}

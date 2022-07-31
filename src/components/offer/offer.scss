@@ -1,5 +1,23 @@
+@import "../../shared/styles/variables.scss";
+
 .offers__offer {
   height: 140px;
   background: #f2f2f2;
   border-radius: 5px;
+  padding: 30px;
+}
+
+.offer__icon {
+}
+
+.offer__name {
+  margin-top: 5px;
+  display: block;
+  width: 115px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: $textColorDark;
 }
