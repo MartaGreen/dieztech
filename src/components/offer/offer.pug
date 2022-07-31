@@ -3,4 +3,4 @@ mixin Offer({name, iconId, width})
     svg.offer__icon(width=width height='22' viewBox=`0 0 ${width} 22`)
       use(xlink:href=`icons/sprites.svg#${iconId}`)
 
-    span.offer__name !{name}
+    h3.offer__name !{name}
