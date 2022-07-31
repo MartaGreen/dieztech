@@ -51,19 +51,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.(eot|woff2?|ttf)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "/fonts",
-              clean: true,
-            },
-          },
-        ],
-      },
-      {
         test: /\.svg$/,
         use: [
           {
