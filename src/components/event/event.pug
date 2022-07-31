@@ -1,6 +1,6 @@
-mixin Event({name, date, type, image})
+mixin Event({name, date, datetime, type, image})
   article.events__event
     .event__preview(style=`background-image: url(${image})`)
     h3.event__name= name
-    time.event__date(datetime)= date
+    time.event__date(datetime=datetime)= date
     span.event__type= type
