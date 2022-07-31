@@ -54,16 +54,6 @@
   .user-interactions__btn {
     min-width: 120px;
     height: 50px;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Roboto";
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
 
     .user-interactions__btn-icon {
       margin-right: 9px;
@@ -71,14 +61,9 @@
 
     &.user-interactions__useful {
       flex: 0 1 177px;
-      background: $eyeCatchingColor;
-      color: $textColorLight;
     }
     &.user-interactions__personal-account {
       flex: 0 1 175px;
-      border: 1px solid $textColor;
-      background: none;
-      color: $textColor;
     }
   }
 }

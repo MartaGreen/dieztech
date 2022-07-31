@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+.btn {
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03px;
+
+  &.btn_light {
+    border: 1px solid $textColor;
+    background: none;
+    color: $textColor;
+  }
+
+  &.btn_bright {
+    background: $eyeCatchingColor;
+    color: $textColorLight;
+  }
+}
