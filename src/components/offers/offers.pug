@@ -1,0 +1,26 @@
+-
+  var sliders = [
+    { name: "Бухгалтеры", iconId: "" },
+    { name: "Репетитор", iconId: "" },
+    { name: "Программисты", iconId: "" },
+    { name: "Няни и сиделки", iconId: "" },
+  ];
+
+  var slidersTest = [...sliders, ...sliders, ...sliders];
+
+section.offers 
+  .offers__inner(class="page-inner")
+    h2.offers__title Заголовок
+
+    .offers__offers-slider(class="swiper" id="offers-swiper")
+      .offers-slider__wrapper(class="swiper-wrapper")
+        include ../offer/offer.pug
+        each slider in slidersTest
+          +Offer(slider) slider.name
+
+      .offers-slider__nav-panel
+        svg.offers-slider__nav-btn(class="swiper-button-prev offers-slider__prev")
+          use(xlink:href="icons/sprites.svg#arrow")
+        .offers-slider__pagination(class="swiper-pagination")
+        svg.offers-slider__nav-btn(class="swiper-button-next offers-slider__next")
+          use(xlink:href="icons/sprites.svg#arrow")

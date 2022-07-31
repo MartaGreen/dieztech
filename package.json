@@ -30,6 +30,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
-    "pug-loader": "^2.4.0"
+    "pug-loader": "^2.4.0",
+    "swiper": "^8.3.2"
   }
 }

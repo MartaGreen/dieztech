@@ -1,0 +1,69 @@
+@import "../../shared/styles/variables.scss";
+.offers {
+  padding: 89px 0;
+}
+
+.offers__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: $textColorDark;
+}
+
+.offers__offers-slider {
+  margin-top: 50px;
+}
+
+.offers-slider__nav-panel {
+  width: 147px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+}
+
+.offers-slider__nav-btn {
+  width: 23px;
+  height: 12px;
+  cursor: pointer;
+
+  use {
+    stroke: $eyeCatchingColor;
+  }
+
+  &.offers-slider__nav-btn_disabled {
+    cursor: default;
+    use {
+      stroke: unset;
+    }
+  }
+
+  &.offers-slider__next {
+    transform: rotate(180deg);
+  }
+}
+
+.offers-slider__pagination {
+  width: 50px;
+  position: relative;
+  bottom: unset;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination__bullet {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+
+  &.pagination__bullet_active {
+    border: none;
+    background: $eyeCatchingColor;
+  }
+}
