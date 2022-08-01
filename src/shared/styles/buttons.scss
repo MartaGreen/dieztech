@@ -4,10 +4,10 @@
   border: 1px solid $textColor;
   background: none;
 
-  & .btn__text {
+  .btn__text {
     color: $textColor;
   }
-  & .btn__icon {
+  .btn__icon {
     fill: $textColor;
     stroke: none;
   }
@@ -17,24 +17,27 @@
   border: none;
   background: $eyeCatchingColor;
 
-  & .btn__text {
+  .btn__text {
     color: $textColorLight;
   }
-  & .btn__icon {
+  .btn__icon {
     fill: $textColorLight;
     stroke: $eyeCatchingColor;
   }
 }
 
 .btn {
+  position: relative;
   border-radius: 5px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   cursor: pointer;
   transition: 0.3s;
+  z-index: 1;
 
   &.btn_light {
     @include lightBtn;
@@ -44,14 +47,48 @@
     @include brightBtn;
   }
 
+  &::after {
+    content: "";
+
+    position: absolute;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+
+    display: block;
+    color: $textColor;
+    background: $textColorLight;
+
+    z-index: -1;
+    transition: 0.5s;
+    transform: skewX(-45deg) scale(0, 1);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    transform: skewX(-45deg) scale(0.75, 0.9);
+  }
+
   &:hover,
   &:focus {
-    &.btn_light {
+    background: $eyeCatchingColor;
+    border: none;
+
+    &.btn__light {
+      @include lightBtn;
+    }
+
+    &.btn__bright {
       @include brightBtn;
     }
 
-    &.btn_bright {
-      @include lightBtn;
+    .btn__text {
+      color: $eyeCatchingColor;
+    }
+    .btn__icon {
+      fill: $eyeCatchingColor;
+      stroke: $eyeCatchingColor;
     }
   }
 }
