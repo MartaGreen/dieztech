@@ -1,5 +1,31 @@
 @import "./variables.scss";
 
+@mixin lightBtn {
+  border: 1px solid $textColor;
+  background: none;
+
+  & .btn__text {
+    color: $textColor;
+  }
+  & .btn__icon {
+    fill: $textColor;
+    stroke: none;
+  }
+}
+
+@mixin brightBtn {
+  border: none;
+  background: $eyeCatchingColor;
+
+  & .btn__text {
+    color: $textColorLight;
+  }
+  & .btn__icon {
+    fill: $textColorLight;
+    stroke: $eyeCatchingColor;
+  }
+}
+
 .btn {
   border-radius: 5px;
 
@@ -7,20 +33,38 @@
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
+  transition: 0.3s;
+
+  &.btn_light {
+    @include lightBtn;
+  }
+
+  &.btn_bright {
+    @include brightBtn;
+  }
+
+  &:hover {
+    &.btn_light {
+      @include brightBtn;
+    }
+
+    &.btn_bright {
+      @include lightBtn;
+    }
+  }
+}
+
+.btn__text {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03px;
+}
 
-  &.btn_light {
-    border: 1px solid $textColor;
-    background: none;
-    color: $textColor;
-  }
+.btn__icon-wrapper {
+}
 
-  &.btn_bright {
-    background: $eyeCatchingColor;
-    color: $textColorLight;
-  }
+.btn__icon {
 }

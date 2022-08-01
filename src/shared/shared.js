@@ -1,6 +1,6 @@
-import "../components/sidebar/sidebar";
 import "../components/header/header";
 import "../components/footer/footer";
+import "../components/sidebar/sidebar";
 
 // styles
 import "./styles/reset.scss";

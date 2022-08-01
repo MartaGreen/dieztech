@@ -44,25 +44,25 @@
   }
 }
 
-.header__user-interactions {
+.header__user {
   flex: 0 1 373px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
 
-  .user-interactions__btn {
+  .user__btn {
     min-width: 120px;
     height: 50px;
 
-    .user-interactions__btn-icon {
+    .user__btn-icon-wrapper {
       margin-right: 9px;
     }
 
-    &.user-interactions__useful {
+    &.user__useful {
       flex: 0 1 177px;
     }
-    &.user-interactions__personal-account {
+    &.user__personal-account {
       flex: 0 1 175px;
     }
   }
@@ -84,7 +84,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .header__user-interactions {
+  .header__user {
     display: none;
   }
 }

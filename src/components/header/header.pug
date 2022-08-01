@@ -9,13 +9,13 @@ header.header(class="section")
       a.nav__link(href="#") Мероприятия
       a.nav__link(href="#") Новости
 
-    .header__user-interactions 
-      button.user-interactions__btn(class="btn btn_bright user-interactions__useful") 
-        svg.user-interactions__btn-icon(width="17" height="18" viewBox="0 0 17 18")
-          use(xlink:href='icons/sprites.svg#btn-icon')
-        span.user-interactions__btn-text Полезное
-      button.user-interactions__btn(class="btn btn_light user-interactions__personal-account")
-        span.user-interactions__btn-text Личный кабинет
+    .header__user 
+      button.user__btn(class="btn btn_bright user__useful") 
+        svg.user__btn-icon-wrapper(class="btn__icon-wrapper" width="17" height="18" viewBox="0 0 17 18")
+          use.user__btn-icon(class="btn__icon" xlink:href='icons/sprites.svg#btn-icon')
+        span.user__btn-text(class="btn__text") Полезное
+      button.user__btn(class="btn btn_light user__personal-account")
+        span.user__btn-text(class="btn__text") Личный кабинет
 
     .header__burger(id="burger-menu")
       .burger__item 
