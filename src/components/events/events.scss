@@ -42,12 +42,13 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 650px) {
   .events__header {
     align-items: center;
+    gap: 15px;
   }
   .events__title {
-    font-size: 30px;
+    font-size: 34px;
   }
   .events__btn {
     height: 50px;

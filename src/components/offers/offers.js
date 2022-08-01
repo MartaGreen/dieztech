@@ -16,12 +16,14 @@ import "../../assets/images/tutors.svg";
 window.addEventListener("load", () => {
   const offersSwiper = document.getElementById("offers-swiper");
 
-  new Swiper(offersSwiper, {
+  const swiper = new Swiper(offersSwiper, {
     modules: [Navigation, Pagination, Keyboard],
     spaceBetween: 30,
     loop: false,
     speed: 400,
     lazy: true,
+    watchSlidesProgress: true,
+    slideVisibleClass: "offers-slider__slide_visible",
 
     breakpoints: {
       0: {
@@ -54,7 +56,7 @@ window.addEventListener("load", () => {
     },
 
     keyboard: {
-      enabled: true,
+      enabled: false,
       pageUpDown: true,
     },
 
@@ -63,5 +65,12 @@ window.addEventListener("load", () => {
         console.log("swiper succesfully initialized");
       },
     },
+  });
+
+  offersSwiper.addEventListener("focus", () => {
+    swiper.keyboard.enable();
+  });
+  offersSwiper.addEventListener("focusout", () => {
+    swiper.keyboard.disable();
   });
 });

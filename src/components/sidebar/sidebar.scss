@@ -8,6 +8,7 @@ $sidebarWidth: 280px;
   width: $sidebarWidth;
   min-height: 100%;
   overflow-y: auto;
+  display: none;
 
   padding: 60px 0;
   box-shadow: 0 3px 5px grey;
@@ -43,15 +44,16 @@ $sidebarWidth: 280px;
   flex: 0 0 50px !important;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .sidebar {
+    display: block;
     .sidebar__nav {
       display: flex;
     }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 650px) {
   .sidebar {
     .sidebar__user {
       display: flex;

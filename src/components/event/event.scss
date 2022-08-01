@@ -13,8 +13,13 @@
   cursor: pointer;
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     box-shadow: 0px 0px 50px rgba(23, 66, 84, 0.2);
+  }
+
+  &:focus {
+    transform: scale(0.95);
   }
 }
 

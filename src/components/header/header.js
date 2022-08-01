@@ -30,10 +30,12 @@ window.onload = () => {
   // close the sidebar when clicking on the main part of the page
   const bodyContent = document.querySelector(".body__content");
   bodyContent.onclick = (e) => {
-    const clickedElem = e.target;
+    if (isOpened) {
+      const clickedElem = e.target;
 
-    if (burger.contains(clickedElem)) return;
-    closeSidebar();
-    isOpened = false;
+      if (burger.contains(clickedElem)) return;
+      closeSidebar();
+      isOpened = false;
+    }
   };
 };
