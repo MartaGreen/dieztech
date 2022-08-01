@@ -27,6 +27,7 @@ window.onload = () => {
     isOpened = !isOpened;
   };
 
+  // close the sidebar when clicking on the main part of the page
   const bodyContent = document.querySelector(".body__content");
   bodyContent.onclick = (e) => {
     const clickedElem = e.target;

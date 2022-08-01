@@ -20,6 +20,7 @@ window.addEventListener("load", () => {
     spaceBetween: 30,
     loop: false,
     speed: 400,
+    lazy: true,
 
     navigation: {
       nextEl: offersSwiper.querySelector(".swiper-button-next"),

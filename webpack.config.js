@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const path = require("path");
 
 const generatePath = (filename, ext) =>
@@ -17,9 +16,6 @@ const plugins = [
   }),
 
   new SpriteLoaderPlugin(),
-  new FaviconsWebpackPlugin(
-    path.resolve(__dirname, "src/assets/images", "logo.svg")
-  ),
 ];
 
 module.exports = {
