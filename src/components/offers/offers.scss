@@ -19,14 +19,14 @@
   height: 12px;
   cursor: pointer;
 
-  use {
-    stroke: $eyeCatchingColor;
+  use.offers-slider__nav-icon {
+    fill: $eyeCatchingColor;
   }
 
   &.offers-slider__nav-btn_disabled {
     cursor: default;
-    use {
-      stroke: unset;
+    use.offers-slider__nav-icon {
+      fill: $textColorDark;
     }
   }
 

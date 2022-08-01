@@ -5,6 +5,12 @@
   background: #f2f2f2;
   border-radius: 5px;
   padding: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(0.95);
+  }
 }
 
 .offer__icon {
