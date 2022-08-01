@@ -44,7 +44,8 @@
     @include brightBtn;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &.btn_light {
       @include brightBtn;
     }

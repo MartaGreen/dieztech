@@ -23,7 +23,7 @@ module.exports = {
     shared: path.resolve(__dirname, "src/shared", "shared.js"),
     index: generatePath("index", entryExt),
   },
-  output: { filename: "[name].[hash].js", clean: true },
+  output: { publicPath: "", filename: "[name].[hash].js", clean: true },
 
   plugins: plugins,
 
@@ -42,7 +42,7 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|ico)$/i,
         use: [
           {
             loader: "file-loader",
@@ -50,6 +50,7 @@ module.exports = {
               name: "[name].[ext]",
               clean: true,
               outputPath: "/images",
+              publicPath: "images",
             },
           },
         ],

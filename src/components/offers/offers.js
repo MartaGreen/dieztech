@@ -1,7 +1,8 @@
-import Swiper, { Navigation, Pagination } from "swiper";
+import Swiper, { Navigation, Pagination, Keyboard } from "swiper";
 import "swiper/css";
 import "swiper/scss/pagination";
 import "swiper/css/hash-navigation";
+import "swiper/css/keyboard";
 
 import "./offers.scss";
 import "../offer/offer";
@@ -15,12 +16,27 @@ import "../../assets/images/tutors.svg";
 window.addEventListener("load", () => {
   const offersSwiper = document.getElementById("offers-swiper");
 
-  const swiper = new Swiper(offersSwiper, {
-    modules: [Navigation, Pagination],
+  new Swiper(offersSwiper, {
+    modules: [Navigation, Pagination, Keyboard],
     spaceBetween: 30,
     loop: false,
     speed: 400,
     lazy: true,
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+      700: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      1200: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+    },
 
     navigation: {
       nextEl: offersSwiper.querySelector(".swiper-button-next"),
@@ -37,30 +53,15 @@ window.addEventListener("load", () => {
       modifierClass: "offers-slider__pagination",
     },
 
+    keyboard: {
+      enabled: true,
+      pageUpDown: true,
+    },
+
     on: {
       init: () => {
         console.log("swiper succesfully initialized");
       },
     },
   });
-
-  const visibleSlidesCount = () => {
-    const windowWidth = window.innerWidth;
-
-    if (windowWidth <= 700) return 1;
-    if (windowWidth <= 1200) return 2;
-    if (windowWidth > 1200) return 4;
-  };
-  const changeVisibleSlidesCount = (count) => {
-    swiper.params.slidesPerView = count;
-    swiper.params.slidesPerGroup = count;
-    swiper.update();
-  };
-  const setVisibleSlides = () => {
-    const slidesCount = visibleSlidesCount();
-    changeVisibleSlidesCount(slidesCount);
-  };
-
-  setVisibleSlides();
-  window.addEventListener("resize", setVisibleSlides);
 });

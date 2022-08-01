@@ -24,23 +24,24 @@
   justify-content: space-between;
 
   margin-left: 132px;
+}
 
-  .nav__link {
-    color: $textColor;
-    font-family: "Roboto";
-    font-weight: 400;
-    cursor: pointer;
+.nav__link {
+  color: $textColor;
+  font-family: "Roboto";
+  font-weight: 400;
+  cursor: pointer;
 
-    &:last-child {
-      flex-basis: 72px;
-      text-align: center;
-    }
+  &:last-child {
+    flex-basis: 72px;
+    text-align: center;
+  }
 
-    &:hover,
-    &:active,
-    &.nav__link_active {
-      color: $eyeCatchingColor;
-    }
+  &:hover,
+  &:active,
+  &:focus,
+  &.nav__link_active {
+    color: $eyeCatchingColor;
   }
 }
 
