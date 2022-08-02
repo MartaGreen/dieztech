@@ -30,6 +30,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.pug$/,
         use: ["pug-loader"],
       },
@@ -43,17 +48,17 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|ico)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              clean: true,
-              outputPath: "/images",
-              publicPath: "images",
-            },
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name][ext]",
+        },
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext]",
+        },
       },
       {
         test: /\.svg$/,
